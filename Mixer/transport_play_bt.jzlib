@@ -1,0 +1,39 @@
+<JZML>
+<WINDOW class="Canvas" text="bt_play" x="0" y="0" width="102" height="98" id="563" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="1" touchSupport="1">
+<VARIABLE name="color={1,0.3,0.3,0.3}" send="1" osc_target="0" osc_trigger="1" osc_message="/Mixer/bt_play/color" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="4468,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="decl c = getobject();
+canvas_clear(c);
+
+decl rect = getattribute(c, 'rect');
+decl w = rect[2]; decl h = rect[3];
+
+canvas_setLineWidth(c,4);
+canvas_setFillStyle(c, color);
+
+canvas_beginPath(c);
+canvas_fillRect(c, 0, 0, w, h);
+canvas_addHitRegion(c,0,1);
+ 
+if(playing==0){
+canvas_setFillStyle(c, white);
+}
+else if (playing==1){
+canvas_setFillStyle(c,black);
+}
+
+canvas_beginPath(c);
+canvas_moveTo(c,5*w/17,4*h/17);
+canvas_lineTo(c,13*w/17,8*h/17);
+canvas_lineTo(c,5*w/17,13*h/17);
+canvas_fill(c);
+
+
+canvas_refresh(c);" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_play/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="action(cursor,hit,x,y)" script="if(playing==0)oscout(0,'/play',1);
+if(playing==1)oscout(0,'/stop',1);
+draw();" trigger_script="sub_sel" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/arranger/clipLauncherSectionVisibility" midi_message="0x90,0x90,0,0" midi_target="-1" flag="9"/>
+<SCRIPT name="receive_play()" script="if(playing==1)color={1,1,0.5,0.2};
+else if(playing==0)color={1,0.3,0.3,0.3};
+draw();" trigger_script="playing" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/play" midi_message="0x90,0x90,0,0" midi_target="-1" flag="9"/>
+</WINDOW>
+</JZML>

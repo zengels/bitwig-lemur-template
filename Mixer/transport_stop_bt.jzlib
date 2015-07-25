@@ -1,0 +1,33 @@
+<JZML>
+<WINDOW class="Canvas" text="bt_stop" x="0" y="0" width="100" height="98" id="564" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="1" touchSupport="1">
+<VARIABLE name="color={1,0.3,0.3,0.3}" send="1" osc_target="0" osc_trigger="1" osc_message="/Mixer/bt_stop/color" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="4468,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="decl c = getobject();
+canvas_clear(c);
+
+decl rect = getattribute(c, 'rect');
+decl w = rect[2]; decl h = rect[3];
+decl grey={1,0.3,0.3,0.3},white={1,1,1,1},orange={1,1,0.5,0.2};
+
+canvas_setFillStyle(c, color);
+
+canvas_beginPath(c);
+canvas_fillRect(c, 0, 0, w, h);
+canvas_addHitRegion(c,0,1);
+
+canvas_setFillStyle(c, white);
+canvas_beginPath(c);
+canvas_fillRect(c, w/4, h/4, 2*w/4, 2*h/4);
+
+
+canvas_refresh(c);" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_stop/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="action(cursor,hit,x,y)" script="if(playing==1) oscout(0,'/action/Continue-Playback-or-Stop',1);
+else if (playing==0) oscout(0,'/action/Stop-Transport',1);
+
+color={1,0.15,0.15,0.15};
+draw();
+" trigger_script="sub_sel" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/arranger/clipLauncherSectionVisibility" midi_message="0x90,0x90,0,0" midi_target="-1" flag="9"/>
+<SCRIPT name="onplay()" script="draw();" trigger_script="playing" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_stop/onplay" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="action_up(cursor,hit,x,y)" script="color=grey;
+draw();" trigger_script="" trigger_type="255" trigger_name="onCursorUp" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_stop/action_up" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</JZML>

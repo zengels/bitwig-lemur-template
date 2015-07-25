@@ -1,0 +1,39 @@
+<JZML>
+<PROJECT version="5210" width="1024" height="724" osc_target="0" midi_target="-1" kbmouse_target="-1" skin="Flat"/>
+<VARIABLE name="playing=" value="400364096.000000" send="9" osc_target="0" osc_trigger="1" osc_message="/play" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="stop=" value="0.000000" send="9" osc_target="0" osc_trigger="1" osc_message="/stop" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="record=" value="0.000000" send="9" osc_target="0" osc_trigger="1" osc_message="/record" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8192,-32695,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="autowrite=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/autowrite" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="4468,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="grey={1,0.3,0.3,0.3}" send="1" osc_target="0" osc_trigger="1" osc_message="/grey" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="white=" value="1,1,1,1" send="1" osc_target="0" osc_trigger="1" osc_message="/white" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="orange={1,0.9,0.3,0.2}" send="1" osc_target="0" osc_trigger="1" osc_message="/orange" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="red={1,1,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/red" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="overdub=" value="1.000000" send="9" osc_target="0" osc_trigger="1" osc_message="/overdub" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="repeat=" value="0.000000" send="9" osc_target="0" osc_trigger="1" osc_message="/repeat" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="click=" value="0.000000" send="9" osc_target="0" osc_trigger="1" osc_message="/click" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="11,3,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="follow=" value="1" send="9" osc_target="0" osc_trigger="1" osc_message="/arranger/playbackFollow" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,19100,6284" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="yellow={1,1,1,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/yellow" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12288,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="Cross_Fade_Vis=" value="0" send="9" osc_target="0" osc_trigger="1" osc_message="/mixer/crossFadeSectionVisibility" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="black={1,0,0,0}" send="1" osc_target="0" osc_trigger="1" osc_message="/black" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="blue={1,.4,.6,1}" send="1" osc_target="0" osc_trigger="1" osc_message="/blue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="shift=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/shift" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="29137,48,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="selected_track=" value="1" send="1" osc_target="-1" osc_trigger="1" osc_message="/selected_track" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="init()" script="// MIXER
+
+/*Mixer.cont_toolz.bt_zoom3.color={1,.4,.6,1};Mixer.cont_toolz.bt_cut.color={1,.4,.6,1};
+Mixer.cont_toolz.bt_delete.color={1,.4,.6,1};Mixer.cont_toolz.bt_copy.color={1,.4,.6,1};
+Mixer.cont_toolz.bt_paste.color={1,.4,.6,1};Mixer.cont_toolz.bt_duplicate.color={1,.4,.6,1}*/
+Mixer.bt_undo.color={1,.4,.6,1};Mixer.bt_redo.color={1,.4,.6,1};
+Mixer.bt_play.draw();
+" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drw_r_pannel(c,x,y,r,b,radius)" script="canvas_moveTo(c,x+radius,y);
+canvas_lineTo(c,r-radius,y);
+canvas_arcTo(c,r,y,r,y+radius,radius);
+canvas_lineTo(c,r,b-radius);
+canvas_arcTo(c,r,b,r-radius,b,radius);
+canvas_lineTo(c,x+radius,b);
+canvas_arcTo(c,x,b,x,b-radius,radius);
+canvas_lineTo(c,x,y+radius);
+canvas_arcTo(c,x,y,x+radius,y,radius);
+return(c);" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/drw_r_pannel" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</JZML>
