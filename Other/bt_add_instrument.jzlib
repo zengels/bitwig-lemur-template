@@ -1,0 +1,50 @@
+<JZML>
+<WINDOW class="Canvas" text="bt_autowrite4" x="0" y="0" width="62" height="42" id="628" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="1" touchSupport="1">
+<VARIABLE name="color={1,0.3,0.3,0.3}" send="1" osc_target="0" osc_trigger="1" osc_message="/Mixer/bt_autowrite4/color" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="4468,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="up(cursor,hit,x,y)" script="oscout(0,'/action/Create-Instrument-Track',1);
+color={1,0.3,0.3,0.3};
+draw();" trigger_script="sub_sel" trigger_type="255" trigger_name="onCursorUp" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_autowrite4/up" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="draw()" script="decl c = getobject();
+canvas_clear(c);
+
+decl rect = getattribute(c, 'rect');
+decl w = rect[2]; decl h = rect[3];
+
+canvas_setFillStyle(c, color);
+canvas_beginPath(c);
+canvas_rect(c,0,0,w,h);
+canvas_fillRect(c, 0, 0, w, h);
+
+canvas_setLineWidth(c,w/20) ;
+canvas_setStrokeStyle(c,{1,0,0,0});
+canvas_strokeRect(c,0,0,w,h);	
+
+canvas_addHitRegion(c,0,1);
+ 
+//
+canvas_setFillStyle(c, white);
+canvas_beginPath(c);
+canvas_fillRect(c, 1.5*w/16, h/16, 3.5*w/16, 14*h/16);
+canvas_fillRect(c, 6.5*w/16, h/16, 3.5*w/16, 14*h/16);
+canvas_fillRect(c, 11.5*w/16, h/16, 3.5*w/16, 14*h/16);
+
+canvas_setFillStyle(c, black);
+canvas_beginPath(c);
+canvas_fillRect(c, 3.5*w/16, h/16, 4*w/16, 10*h/16);
+canvas_fillRect(c, 8.75*w/16, h/16, 4*w/16, 10*h/16);
+
+canvas_setFillStyle(c, orange);
+canvas_beginPath(c);
+
+canvas_setFontSize(c, 24);
+canvas_setTextAlign(c,0);
+canvas_setTextBaseline(c,1);
+canvas_fillText(c, '+', 11*w/16,2*h/16, 0);
+
+canvas_refresh(c);" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_autowrite4/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="down(cursor,hit,x,y)" script="
+color={1,0.2,0.2,0.2};
+
+draw();" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_autowrite4/down" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</JZML>
