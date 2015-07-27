@@ -1,0 +1,33 @@
+<JZML>
+<WINDOW class="Canvas" text="lemur_panel_icn_crossfades2" x="0" y="0" width="42" height="34" id="690" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="1" touchSupport="1">
+<VARIABLE name="color=" value="1,1,1,1" send="1" osc_target="0" osc_trigger="1" osc_message="/Mixer/lemur_panel_icn_crossfades2/color" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="4468,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="switch=0" send="1" osc_target="-1" osc_trigger="1" osc_message="/Mixer/lemur_panel_icn_crossfades2/switch" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="78,1,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="decl c = getobject();
+canvas_clear(c);
+
+decl rect = getattribute(c, 'rect');
+decl w = rect[2]; decl h = rect[3];
+decl grey={0,0.2,0.2,0.2},white={1,1,1,1},orange={1,1,0.5,0.2};
+
+
+canvas_setFillStyle(c,grey);
+
+canvas_rect(c,0,0,w,h);
+canvas_fillRect(c, 0, 0, w, h);
+canvas_addHitRegion(c,0,1);
+
+canvas_setFillStyle(c,color);
+canvas_setFontSize(c, w/2);
+canvas_setTextAlign(c,0);
+canvas_setTextBaseline(c,1);
+canvas_fillText(c, 'Bk', 3*w/16,8*h/16, 0);
+
+canvas_refresh(c);" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/lemur_panel_icn_crossfades2/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="up(cursor,hit,x,y)" script="if(switch==0)switch=1;
+else switch=0;
+draw();" trigger_script="sub_sel" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/lemur_panel_icn_crossfades2/up" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="action()" script="if(switch==1) {color={1,1,0.5,0.2};show(Mix_group.cont_bank,1);}
+else {color={1,1,1,1} ;show(Mix_group.cont_bank,0);}
+draw();" trigger_script="switch" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/dd" midi_message="0x90,0x90,0,0" midi_target="-2" flag="9"/>
+</WINDOW>
+</JZML>

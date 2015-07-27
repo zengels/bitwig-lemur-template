@@ -36,7 +36,7 @@ canvas_fillRect(c, 2*w/16, 8*h/16, 13*w/16, h/32);
 canvas_setFillStyle(c, orange);
 canvas_beginPath(c);
 
-canvas_setFontSize(c, 24);
+canvas_setFontSize(c, w/2);
 canvas_setTextAlign(c,0);
 canvas_setTextBaseline(c,1);
 canvas_fillText(c, '+', 11*w/16,2*h/16, 0);

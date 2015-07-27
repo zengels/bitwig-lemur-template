@@ -1,0 +1,55 @@
+<JZML>
+<WINDOW class="Canvas" text="bt_autowrite3" x="0" y="0" width="65" height="38" id="571" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" redrawMode="0" touchSupport="1">
+<VARIABLE name="color={1,0.3,0.3,0.3}" send="1" osc_target="0" osc_trigger="1" osc_message="/Mixer/bt_autowrite3/color" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="4468,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="decl c = getobject();
+canvas_clear(c);
+
+decl rect = getattribute(c, 'rect');
+decl w = rect[2]; decl h = rect[3];
+decl grey={1,0.3,0.3,0.3},white={1,1,1,1},orange={1,0.9,0.3,0.2},black={1,0,0,0};
+
+
+if(overdub==0)
+canvas_setFillStyle(c, grey);
+if(overdub==1)
+canvas_setFillStyle(c, orange);
+
+
+canvas_beginPath(c);
+canvas_rect(c,0,0,w,h);
+canvas_fillRect(c, 0, 0, w, h);
+canvas_addHitRegion(c,0,1);
+ 
+// no record
+
+canvas_setLineWidth(c,4*w/32) ;
+
+if(overdub==0){
+canvas_setStrokeStyle(c, white);
+canvas_setFillStyle(c, white);
+}
+
+//record
+else if (overdub==1){
+canvas_setStrokeStyle(c, black);
+canvas_setFillStyle(c, black);
+}
+
+canvas_beginPath(c);
+canvas_setFontSize(c, (w+h)/7);
+canvas_setTextAlign(c,1);
+canvas_setTextBaseline(c,1);
+canvas_fillText(c, 'OVR', 8*w/16,8*h/16, 0);
+
+
+canvas_refresh(c);" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_autowrite3/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="action(cursor,hit,x,y)" script="draw();" trigger_script="sub_sel" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/arranger/clipLauncherSectionVisibility" midi_message="0x90,0x90,0,0" midi_target="-1" flag="9"/>
+<SCRIPT name="up(cursor,hit,x,y)" script="if(overdub==0)oscout(0,'/overdub',1);
+else if(overdub==1)oscout(0,'/overdub',1);
+
+draw();" trigger_script="sub_sel" trigger_type="255" trigger_name="onCursorUp" trigger="1" clock="0" clock_div="4" osc_message="/Mixer/bt_autowrite3/up" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="receive_play()" script="if(overdub==1)color={1,1,0.5,0.2};
+else if(overdub==0)color={1,0.3,0.3,0.3};
+draw();" trigger_script="overdub" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/play" midi_message="0x90,0x90,0,0" midi_target="-1" flag="9"/>
+</WINDOW>
+</JZML>

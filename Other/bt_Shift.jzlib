@@ -26,7 +26,7 @@ canvas_strokeRect(c,0,0,w,h);
 canvas_addHitRegion(c,0,1);
 //
 canvas_setFillStyle(c, white);
-canvas_setFontSize(c, 16);
+canvas_setFontSize(c, (w+h)/6);
 canvas_setTextAlign(c,1);
 canvas_setTextBaseline(c,1);
 canvas_fillText(c, 'Shift', 8*w/16,8*h/16, 0);
